@@ -4,11 +4,11 @@ Is a light weight cmd tool to resolve html templates into one files by using `sc
 ## Install:
 run with:
 ```
-go install cmd/htmlr.go
+go install https://github.com/artvel/htmlr/htmlr
 ```
 ## Build with:
 ```
-go build cmd/htmlr.go
+go build htmlr/htmlr.go
 ```
 ## Usage:
 ```sh
