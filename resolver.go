@@ -25,7 +25,6 @@ func resolve(input string) []byte {
 func resolveIncludes(src []byte, currentDir string) []byte {
 	return includeExpressionReg.ReplaceAllFunc(src, func(b []byte) []byte {
 		fpath := resolveFilePath(currentDir, extractPath(b))
-		fmt.Println("repl func", "'"+extractPath(b)+"'")
 		return resolveIncludes(loadFile(fpath), filepath.Dir(fpath))
 	})
 }
@@ -41,11 +40,11 @@ func resolveFilePath(dir, fpath string) string {
 				np = filepath.Join(dir, fpath)
 				np, err = filepath.Abs(np)
 				if err != nil {
-					panic(fmt.Sprintf("couldn't find template 1 '%s'", fpath))
+					panic(fmt.Sprintf("couldn't find template '%s'", fpath))
 				}
 			}
 			if _, err = os.Stat(np); errors.Is(err, os.ErrNotExist) {
-				panic(fmt.Sprintf("couldn't find template 2 '%s' '%s'", fpath, np))
+				panic(fmt.Sprintf("couldn't find template '%s'", fpath))
 			}
 		}
 	}
