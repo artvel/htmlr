@@ -1,5 +1,5 @@
 # htmlr = HTML resolver
-Is a light weight cmd tool to resolve html templates into one files by using `script` tag with `type="text/x-template"` with `{% include "template.html" %}`.
+Is a light weight cmd tool to resolve html templates into one files by using `script` tag with `type="text/x-template"` and `{% include "template.html" %}`.
 
 ## Install:
 run with:
