@@ -14,7 +14,7 @@ func main() {
 		input = os.Args[1]
 		os.Args = remove(os.Args, 1)
 	}
-	output := flag.String("o", "", "output File")
+	out := flag.String("o", "", "output File")
 
 	flag.Parse()
 
@@ -29,13 +29,15 @@ func main() {
 		return
 	}
 
-	if *output == "" {
+	output := *out
+
+	if output == "" {
 		fmt.Println("output template path must be provided")
 		flag.Usage()
 		return
 	}
 
-	htmlr.Resolve(input, *output)
+	htmlr.Resolve(input, output)
 }
 
 func remove(slice []string, s int) []string {
