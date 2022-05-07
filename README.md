@@ -4,7 +4,7 @@ Is a light weight cmd tool to resolve html templates into one files by using `sc
 ## Install:
 run with:
 ```
-go install https://github.com/artvel/htmlr/htmlr
+go get github.com/artvel/htmlr && go install github.com/artvel/htmlr/htmlr
 ```
 ## Build with:
 ```
